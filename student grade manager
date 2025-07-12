@@ -1,0 +1,27 @@
+students = {}
+
+while True:
+    print("\n--- Student Grade Manager ---")
+    print("1. Add Student")
+    print("2. Show All Students")
+    print("3. Exit")
+
+    choice = input("Enter your choice (1-3): ")
+
+    if choice == "1":
+        name = input("Enter student name: ")
+        grade = input("Enter student grade: ")
+        students[name] = grade
+        print(f"{name} added with grade {grade}")
+    elif choice == "2":
+        if not students:
+            print("No students added yet.")
+        else:
+            print("\n--- Students and Grades ---")
+            for name, grade in students.items():
+                print(f"{name}: {grade}")
+    elif choice == "3":
+        print("Exiting program. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Try again.")
